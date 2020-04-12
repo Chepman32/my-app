@@ -6,11 +6,11 @@ export const Notes = ({notes}) => {
                 return <li className="list-group-item note" key={notes.id}>
                     <div>
                         <strong>{note.title}</strong>
-            <small>{new Date().toLocaleDateString()}</small>
+            <small>{note.date}</small>
                     </div>
-                <button type="button" class="btn btn-outline-danger btn-sm">&times;</button>
+                <button type="button" className="btn btn-outline-danger btn-sm">&times;</button>
 </li>
             })}
         </ul>
     )
-}
+};

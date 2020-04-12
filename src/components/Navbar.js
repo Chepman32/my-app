@@ -5,10 +5,10 @@ export const Navbar = () => {
         <div className="navbar-brand">
             my-app
             <ul className="navbar-nav">
-      <li class="nav-item">
+      <li className="nav-item">
         <NavLink className="nav-link" to="/" exact>Главная</NavLink>
       </li>
-      <li class="nav-item">
+      <li className="nav-item">
         <NavLink className="nav-link" to="/about">Информация</NavLink>
       </li>
     </ul>

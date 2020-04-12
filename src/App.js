@@ -4,8 +4,12 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Navbar } from './components/Navbar';
 import { Alert } from './components/Alert';
+import { AlertState } from './contextCopy/AlertState';
+import { FirebaseState } from './contextCopy/firebase/FirebaseState';
 function App() {
   return (
+    <FirebaseState>
+    <AlertState>
     <BrowserRouter>
     <Alert/>
     <Navbar/>
@@ -16,6 +20,8 @@ function App() {
       </Switch>
     </div>
     </BrowserRouter>
+    </AlertState>
+    </FirebaseState>
   );
 }
 

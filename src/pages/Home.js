@@ -1,13 +1,16 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import { Form } from '../components/Form';
 import { Notes } from '../components/Notes';
+import { FirebaseContext } from '../contextCopy/firebase/firebaseContext';
+import { Loader } from '../components/Loader';
 export const Home = () => {
-    const notes = new Array(3)
-    .fill('')
-    .map((_, i) => ({id: 1, title: `Note ${i + 1}`}))
+    const {fetchNotes, loading, notes} = useContext(FirebaseContext);
+    useEffect(() => {
+        fetchNotes()
+    }, [])
     return <Fragment>
         <Form/>
         <hr/>
-        <Notes notes={notes}/>
+        {loading ? <Loader/> : <Notes notes={notes}/>}
     </Fragment>
 }
